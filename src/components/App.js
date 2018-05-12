@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import StorePicker from './StorePicker';
+import React, { Component } from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
@@ -10,7 +9,7 @@ export default class App extends Component {
 		return (
 			<div className="catch-of-the-day">
 				<div className="menu">
-					<Header/>
+					<Header tagline="tarek is cool"/>
 				</div>
 				<Order/>
 				<Inventory/>
