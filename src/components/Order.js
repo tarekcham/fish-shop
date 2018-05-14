@@ -1,12 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React from "react";
 
-export default class Order extends Component {
-	render() {
-		return (
-			<Fragment>
-				<div className="order">Order!!</div>
-				
-			</Fragment>
-		);
-	}
+class Order extends React.Component {
+  render() {
+    return <div className="order">Order!!!</div>;
+  }
 }
+
+export default Order;
