@@ -2,7 +2,9 @@ import React from "react";
 import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
-import sampleFishes from '../sample-fishes'
+import sampleFishes from '../sample-fishes';
+import Fish from "./Fish";
+
 
 class App extends React.Component {
   state = {
@@ -15,19 +17,23 @@ class App extends React.Component {
     // 2. Add our new fish to that fishes variable
     fishes[`fish${Date.now()}`] = fish;
     // 3. Set the new fishes object to state
-    this.state={fishes: 'sdfsfd'};
-    console.log(this.state)
+    this.setState={fishes};
+    
   }
 
   loadSampleFishes = () => {
     this.setState({ fishes:sampleFishes })
   }
-  
+
   render() {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
           <Header tagline="Fresh Seafood Market" age={100} />
+          <ul className="fihses">
+
+            {Object.keys(this.state.fishes).map((key) => <Fish details={this.state.fishes[key]} key={key}/>)}
+          </ul>
         </div>
         <Order />
         <Inventory loadSampleFishes={this.loadSampleFishes} addFish={this.addFish} />
