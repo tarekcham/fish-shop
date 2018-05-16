@@ -45,6 +45,9 @@ export default class EditFishForm extends Component {
 					onChange={this.handleChange}
 					value={this.props.fish.image}
 				/>
+				<button onClick={() => this.props.deleteFish(this.props.index)}>
+				Revove Fish
+				</button>
 			</div>
 		);
 	}

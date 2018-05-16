@@ -10,10 +10,12 @@ class Inventory extends Component {
 				{console.log(this.props.fishes)}
 				{Object.keys(this.props.fishes).map(key => (
 					<EditFishForm
-					 fish={this.props.fishes[key]}	
-					 key={key}
-					 index={key}
-					 updateFish={this.props.updateFish} />
+						fish={this.props.fishes[key]}
+						key={key}
+						index={key}
+						updateFish={this.props.updateFish}
+						deleteFish={this.props.deleteFish}
+					/>
 				))}
 				<AddFishForm addFish={this.props.addFish} />
 				<button onClick={this.props.loadSampleFishes}>
