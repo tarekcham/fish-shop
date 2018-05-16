@@ -5,6 +5,8 @@ import Inventory from "./Inventory";
 import sampleFishes from '../sample-fishes';
 import Fish from "./Fish";
 import base from '../base';
+import Proptypes from "prop-types";
+
 
 
 class App extends React.Component {
@@ -13,6 +15,9 @@ class App extends React.Component {
     order: {}
   };
 
+  static propTypes = {
+    match: Proptypes.object
+  }
   componentDidMount() {
     const storeName = this.props.match.params.storeId
     // first reinstate our localStorage

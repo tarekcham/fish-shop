@@ -1,7 +1,11 @@
 import React from "react";
 import { getFunName } from "../helpers";
+import PropTypes from "prop-types";
 
 export default class StorePicker extends React.Component {
+  static propTypes = {
+    history: PropTypes.object
+  };
   myInput = React.createRef();
 
   goToStore = event => {
@@ -28,4 +32,3 @@ export default class StorePicker extends React.Component {
     );
   }
 }
-

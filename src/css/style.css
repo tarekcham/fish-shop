@@ -13,12 +13,14 @@
   padding: 2rem 0 !important;
 }
 .order-exit {
+  color: red;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 .order-exit.order-exit-active {
+  color: green;
   -webkit-transform: translateX(120%);
           transform: translateX(120%);
   padding: 0;
