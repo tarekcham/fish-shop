@@ -14,7 +14,14 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
+    const storeName = this.props.match.params.storeId
+    // first reinstate our localStorage
+    const localStorageRef = localStorage.getItem(storeName);
+    if(localStorage) {
+      this.setState({ order: JSON.parse(localStorageRef)})
+    }
+
+    this.ref = base.syncState(`${storeName}/fishes`, {
       context: this,
       state: 'fishes'
     });
@@ -23,6 +30,15 @@ class App extends React.Component {
   componentWillUnmount() {
     base.removeBinding(this.ref);
   }
+
+
+
+  componentDidUpdate(prevProps, prevState) { //after the component update thier state or props
+    const storeName = this.props.match.params.storeId // that how we get the store name
+    localStorage.setItem(storeName , JSON.stringify(this.state.order));
+  }
+
+
   addFish = fish => {
     // 1. Take a copy of the existing state
     const fishes = { ...this.state.fishes };
