@@ -1,12 +1,12 @@
 import React from "react";
-import { getFunName } from "../helpers";
 import PropTypes from "prop-types";
+import { getFunName } from "../helpers";
 
-export default class StorePicker extends React.Component {
+class StorePicker extends React.Component {
+  myInput = React.createRef();
   static propTypes = {
     history: PropTypes.object
   };
-  myInput = React.createRef();
 
   goToStore = event => {
     // 1. Stop the form from submitting
@@ -32,3 +32,5 @@ export default class StorePicker extends React.Component {
     );
   }
 }
+
+export default StorePicker;
