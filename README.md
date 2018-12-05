@@ -8,7 +8,7 @@ ___
 
 1. Clone the repository.
 
-    ``` git clone https://github.com/tarekcham/fish-shop.```
+    ``` git clone https://github.com/tarekcham/fish-shop.git```
      
 2. Enter the application folder and run in the command line
  ```npm install```
